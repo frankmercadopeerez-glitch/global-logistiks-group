@@ -39,23 +39,26 @@
     
     <!-- Estilos Personalizados -->
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        html, body { 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden; 
+            width: 100%;
+        }
         .hidden-section { display: none; }
         .active-section { display: block; animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         html { scroll-behavior: smooth; }
-        
-        /* Ajuste para el Navbar al hacer scroll */
-        .nav-scrolled { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
     </style>
 </head>
-<body class="bg-white text-slate-800 antialiased flex flex-col min-h-screen">
+<body class="bg-white text-slate-800 antialiased flex flex-col min-h-screen overflow-x-hidden">
 
     <!-- NAVBAR -->
-    <nav id="main-nav" class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 transition-all duration-300">
+    <!-- CORRECCIÓN: Se eliminó 'shadow-sm' para quitar la línea de sombra -->
+    <nav id="main-nav" class="fixed w-full z-50 bg-white transition-all duration-300">
         <div class="container mx-auto px-6 flex justify-between items-center h-full">
             
             <!-- Logo -->
+            <!-- El logo define la altura exacta: h-12 (48px) móvil, h-16 (64px) escritorio -->
             <div class="cursor-pointer flex items-center h-full" onclick="navigateTo('home')">
                 <img src="images/logoglg.jpg" alt="GLG Logo" class="h-12 md:h-16 w-auto object-contain block">
             </div>
@@ -67,7 +70,7 @@
                 <button onclick="navigateTo('about')" class="text-sm font-bold uppercase tracking-wider text-slate-800 hover:text-brand-orange transition-colors h-full flex items-center">Nosotros</button>
                 <button onclick="navigateTo('jobs')" class="text-sm font-bold uppercase tracking-wider text-slate-800 hover:text-brand-orange transition-colors h-full flex items-center">Vacantes</button>
                 
-                <!-- Botón Principal: CONTACTO -->
+                <!-- Botón Principal -->
                 <button onclick="navigateTo('contact')" class="bg-brand-orange hover:bg-orange-600 text-white shadow-lg shadow-orange-500/20 px-6 py-2 rounded-lg font-bold transition-all transform hover:-translate-y-1 text-sm flex items-center gap-2 ml-2">
                     <i data-lucide="message-circle" class="w-4 h-4"></i> Contáctenos
                 </button>
@@ -92,31 +95,31 @@
     </nav>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <main class="flex-grow pt-[65px]"> 
+    <!-- CORRECCIÓN: 'pt-12' (48px) para móvil y 'md:pt-16' (64px) para escritorio. Coincide exactamente con el logo -->
+    <main class="flex-grow pt-12 md:pt-16"> 
 
         <!-- VISTA: INICIO (HOME) -->
         <div id="view-home" class="active-section">
             <!-- Hero -->
-            <div class="relative min-h-[85vh] w-full flex items-center py-20 md:py-32"> <!-- Ajustado padding vertical -->
+            <div class="relative min-h-[80vh] md:min-h-[85vh] w-full flex items-center py-16 md:py-32">
                 <div class="absolute inset-0 z-0">
                     <!-- Imagen de fondo -->
                     <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Personal Portuario" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-900/40"></div>
                 </div>
                 <div class="container mx-auto px-6 z-10 relative">
-                    <div class="max-w-4xl mt-8 md:mt-0"> <!-- Margen superior en móvil para evitar solapamiento -->
-                        <div class="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-cyan-500/20 border border-cyan-400 text-cyan-300 rounded-full text-xs md:text-sm font-bold mb-6 backdrop-blur-sm tracking-wide">
+                    <div class="max-w-4xl mx-auto md:mx-0 text-center md:text-left">
+                        <div class="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-cyan-500/20 border border-cyan-400 text-cyan-300 rounded-full text-xs md:text-sm font-bold mb-4 md:mb-6 backdrop-blur-sm tracking-wide">
                             OUTSOURCING OPERATIVO ESPECIALIZADO
                         </div>
-                        <!-- Título optimizado para móvil (text-4xl) y escritorio (text-7xl) -->
                         <h1 class="text-4xl md:text-7xl font-black text-white leading-tight mb-6 md:mb-8 drop-shadow-lg">
                             Suministramos el <br/>
                             <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Talento Humano</span> que su Operación Necesita
                         </h1>
-                        <p class="text-lg md:text-2xl text-slate-300 mb-8 md:mb-10 font-light max-w-2xl leading-relaxed">
+                        <p class="text-lg md:text-2xl text-slate-300 mb-8 md:mb-10 font-light max-w-2xl leading-relaxed mx-auto md:mx-0">
                             Proveemos personal altamente calificado para operaciones portuarias, fluviales y terrestres. Gestión de fuerza laboral con rigor y seguridad.
                         </p>
-                        <div class="flex flex-col sm:flex-row gap-4 md:gap-6">
+                        <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center md:justify-start">
                             <button onclick="navigateTo('contact')" class="bg-brand-orange hover:bg-orange-600 text-white px-8 py-3.5 rounded-lg font-bold text-base md:text-lg flex items-center justify-center gap-2 transition-all hover:-translate-y-1 shadow-xl shadow-orange-500/30">
                                 Solicitar Personal <i data-lucide="arrow-right" class="w-5 h-5 md:w-6 md:h-6"></i>
                             </button>
@@ -142,11 +145,11 @@
                         </div>
                         <div class="p-2 md:p-4">
                             <div class="text-3xl md:text-5xl font-black text-brand-cyan mb-1 md:mb-2">100%</div>
-                            <div class="text-xs md:text-sm text-slate-400 uppercase tracking-widest">Certificado</div>
+                            <div class="text-xs md:text-sm text-slate-400 uppercase tracking-widest">Personal Certificado</div>
                         </div>
                         <div class="p-2 md:p-4">
                             <div class="text-3xl md:text-5xl font-black text-brand-orange mb-1 md:mb-2">0</div>
-                            <div class="text-xs md:text-sm text-slate-400 uppercase tracking-widest">Accidentes</div>
+                            <div class="text-xs md:text-sm text-slate-400 uppercase tracking-widest">Accidentes Graves</div>
                         </div>
                     </div>
                 </div>
@@ -163,25 +166,25 @@
                     
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <!-- Servicio 1 -->
-                        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-brand-orange hover:-translate-y-2 transition-transform group">
-                            <div class="mb-6 text-5xl md:text-6xl bg-orange-50 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full group-hover:bg-brand-orange/20 transition-colors">🏗️</div>
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-brand-orange hover:-translate-y-2 transition-transform group text-center md:text-left">
+                            <div class="mb-6 text-5xl md:text-6xl bg-orange-50 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full group-hover:bg-brand-orange/20 transition-colors mx-auto md:mx-0">🏗️</div>
                             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Operarios Portuarios</h3>
                             <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Cuadrillas para estiba, desestiba y trincaje. Personal con cursos de alturas y manejo de cargas.</p>
-                            <button onclick="navigateTo('services')" class="text-brand-orange font-bold hover:underline flex items-center gap-2 text-sm">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                            <button onclick="navigateTo('services')" class="text-brand-orange font-bold hover:underline flex items-center gap-2 text-sm mx-auto md:mx-0">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
                         </div>
                         <!-- Servicio 2 -->
-                        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-brand-cyan hover:-translate-y-2 transition-transform group">
-                            <div class="mb-6 text-5xl md:text-6xl bg-cyan-50 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full group-hover:bg-brand-cyan/20 transition-colors">🚤</div>
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-brand-cyan hover:-translate-y-2 transition-transform group text-center md:text-left">
+                            <div class="mb-6 text-5xl md:text-6xl bg-cyan-50 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full group-hover:bg-brand-cyan/20 transition-colors mx-auto md:mx-0">🚤</div>
                             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Personal Fluvial</h3>
                             <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Suministro de <strong>pilotos de lancha</strong> y motoristas. Experiencia en maniobras complejas en río.</p>
-                            <button onclick="navigateTo('services')" class="text-brand-cyan font-bold hover:underline flex items-center gap-2 text-sm">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                            <button onclick="navigateTo('services')" class="text-brand-cyan font-bold hover:underline flex items-center gap-2 text-sm mx-auto md:mx-0">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
                         </div>
                         <!-- Servicio 3 -->
-                        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-brand-orange hover:-translate-y-2 transition-transform group">
-                            <div class="mb-6 text-5xl md:text-6xl bg-orange-50 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full group-hover:bg-brand-orange/20 transition-colors">📋</div>
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-brand-orange hover:-translate-y-2 transition-transform group text-center md:text-left">
+                            <div class="mb-6 text-5xl md:text-6xl bg-orange-50 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full group-hover:bg-brand-orange/20 transition-colors mx-auto md:mx-0">📋</div>
                             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Loading Masters</h3>
                             <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Expertos técnicos para supervisión de interfaz buque-tierra. Personal bilingüe con dominio ISGOTT.</p>
-                            <button onclick="navigateTo('services')" class="text-brand-orange font-bold hover:underline flex items-center gap-2 text-sm">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                            <button onclick="navigateTo('services')" class="text-brand-orange font-bold hover:underline flex items-center gap-2 text-sm mx-auto md:mx-0">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
                         </div>
                     </div>
                     <div class="text-center mt-12">
@@ -200,8 +203,8 @@
                             <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Equipo de trabajo seguro" class="rounded-3xl shadow-2xl w-full h-auto object-cover">
                         </div>
                         <div class="w-full lg:w-1/2">
-                            <span class="text-brand-cyan font-bold uppercase tracking-wider text-sm block mb-2">Gestión de Talento</span>
-                            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">¿Por qué confiar su operación a nuestro personal?</h2>
+                            <span class="text-brand-cyan font-bold uppercase tracking-wider text-sm block mb-2 text-center lg:text-left">Gestión de Talento</span>
+                            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 text-center lg:text-left">¿Por qué confiar su operación a nuestro personal?</h2>
                             
                             <div class="space-y-6">
                                 <div class="flex gap-4 md:gap-6">
@@ -209,17 +212,17 @@
                                         <i data-lucide="shield-check" class="w-5 h-5 md:w-6 md:h-6"></i>
                                     </div>
                                     <div>
-                                        <h4 class="text-lg md:text-xl font-bold mb-1">Capacitación Constante</h4>
-                                        <p class="text-slate-600 text-sm md:text-base">Entrenamiento continuo en HSE. El lema #SiempreSeguro es nuestro ADN.</p>
+                                        <h4 class="text-lg md:text-xl font-bold mb-1">Seguridad Industrial Primero</h4>
+                                        <p class="text-slate-600 text-sm md:text-base">Protocolos HSE estrictos. Nuestro lema #SiempreSeguro es nuestra política operativa diaria.</p>
                                     </div>
                                 </div>
                                 <div class="flex gap-4 md:gap-6">
                                     <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-cyan/10 rounded-lg flex items-center justify-center shrink-0 text-brand-cyan">
-                                        <i data-lucide="user-check" class="w-5 h-5 md:w-6 md:h-6"></i>
+                                        <i data-lucide="clock" class="w-5 h-5 md:w-6 md:h-6"></i>
                                     </div>
                                     <div>
-                                        <h4 class="text-lg md:text-xl font-bold mb-1">Selección Rigurosa</h4>
-                                        <p class="text-slate-600 text-sm md:text-base">Filtramos los mejores perfiles con experiencia en empresas top del sector.</p>
+                                        <h4 class="text-lg md:text-xl font-bold mb-1">Eficiencia en Tiempos</h4>
+                                        <p class="text-slate-600 text-sm md:text-base">Reducimos tiempos muertos mediante personal ágil y comprometido con la operación.</p>
                                     </div>
                                 </div>
                                 <div class="flex gap-4 md:gap-6">
@@ -227,8 +230,8 @@
                                         <i data-lucide="users" class="w-5 h-5 md:w-6 md:h-6"></i>
                                     </div>
                                     <div>
-                                        <h4 class="text-lg md:text-xl font-bold mb-1">Flexibilidad Operativa</h4>
-                                        <p class="text-slate-600 text-sm md:text-base">Desde un piloto puntual hasta cuadrillas completas para grandes proyectos.</p>
+                                        <h4 class="text-lg md:text-xl font-bold mb-1">Talento Humano Calificado</h4>
+                                        <p class="text-slate-600 text-sm md:text-base">Invertimos en la capacitación constante de nuestro equipo, promoviendo la "Valentía" y el "Compromiso".</p>
                                     </div>
                                 </div>
                             </div>
@@ -300,7 +303,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-                     <!-- Tarjetas de servicio (se mantiene igual estructura, solo ajuste visual si es necesario) -->
+                     <!-- Tarjetas de servicio -->
                      <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
                         <div class="md:w-1/3 bg-slate-100 flex items-center justify-center text-6xl md:text-8xl p-6 md:p-8">🏗️</div>
                         <div class="p-6 md:p-8 md:w-2/3">
@@ -313,7 +316,6 @@
                             </ul>
                         </div>
                      </div>
-                     <!-- ... (otras tarjetas similares) ... -->
                      <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
                         <div class="md:w-1/3 bg-slate-100 flex items-center justify-center text-6xl md:text-8xl p-6 md:p-8">🚛</div>
                         <div class="p-6 md:p-8 md:w-2/3">
@@ -364,7 +366,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                    <!-- (Tarjetas de empleo se mantienen igual, la estructura responsive ya está bien) -->
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
                         <div class="flex justify-between items-start mb-4">
                             <div>
@@ -380,7 +381,6 @@
                         </div>
                         <button onclick="openModal('Piloto de Lancha')" class="w-full border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white py-2 rounded-lg font-bold transition-colors">Aplicar a Vacante</button>
                     </div>
-                    <!-- ... más vacantes ... -->
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
                         <div class="flex justify-between items-start mb-4">
                             <div>
@@ -489,10 +489,11 @@
             <div class="container mx-auto px-6 max-w-4xl">
                 <h1 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Política de Tratamiento de Datos</h1>
                 <div class="prose max-w-none text-slate-600 bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                    <p class="mb-4"><strong>GLOBAL LOGISTIKS GROUP S.A.S.</strong>, en cumplimiento de la Ley 1581 de 2012...</p>
+                    <p class="mb-4"><strong>GLOBAL LOGISTIKS GROUP S.A.S.</strong>, en cumplimiento de la Ley 1581 de 2012, informa que sus datos serán tratados confidencialmente.</p>
                     <ul class="list-disc pl-5 space-y-2">
                         <li>Uso para procesos de selección y contratación.</li>
                         <li>Gestión administrativa y facturación.</li>
+                        <li>Envío de comunicaciones corporativas.</li>
                     </ul>
                     <p class="mt-4">Para ejercer sus derechos, contacte a: <a href="mailto:info@globallogistiksgroup.com" class="text-brand-orange hover:underline">info@globallogistiksgroup.com</a></p>
                 </div>
@@ -501,7 +502,7 @@
 
     </main>
 
-    <!-- FOOTER COMPACTO (OPTIMIZADO PARA MÓVIL) -->
+    <!-- FOOTER COMPACTO MEJORADO -->
     <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-900 font-sans">
         <div class="container mx-auto px-6">
             <!-- Grid responsive: 2 columnas en móvil (más compacto), 4 en escritorio -->
@@ -510,7 +511,7 @@
                 <!-- Brand (Ocupa 2 columnas en móvil para encabezar) -->
                 <div class="col-span-2 md:col-span-1">
                     <span class="text-white font-bold text-lg block mb-3">Global Logistiks Group</span>
-                    <p class="text-sm leading-relaxed">Expertos en suministro de personal operativo para el sector portuario y fluvial.</p>
+                    <p class="text-sm leading-relaxed">Expertos en suministro de personal operativo para el sector portuario y fluvial en Colombia.</p>
                 </div>
 
                 <!-- Servicios -->
