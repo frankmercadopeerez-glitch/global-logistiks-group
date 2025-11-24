@@ -53,12 +53,12 @@
 <body class="bg-white text-slate-800 antialiased flex flex-col min-h-screen overflow-x-hidden">
 
     <!-- NAVBAR -->
-    <!-- CORRECCIÓN: Se eliminó 'shadow-sm' para quitar la línea de sombra -->
+    <!-- Fondo blanco sólido, sin sombras ni bordes extraños -->
     <nav id="main-nav" class="fixed w-full z-50 bg-white transition-all duration-300">
         <div class="container mx-auto px-6 flex justify-between items-center h-full">
             
             <!-- Logo -->
-            <!-- El logo define la altura exacta: h-12 (48px) móvil, h-16 (64px) escritorio -->
+            <!-- Altura ajustada para definir el alto de la barra -->
             <div class="cursor-pointer flex items-center h-full" onclick="navigateTo('home')">
                 <img src="images/logoglg.jpg" alt="GLG Logo" class="h-12 md:h-16 w-auto object-contain block">
             </div>
@@ -95,7 +95,7 @@
     </nav>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <!-- CORRECCIÓN: 'pt-12' (48px) para móvil y 'md:pt-16' (64px) para escritorio. Coincide exactamente con el logo -->
+    <!-- Padding top exacto para compensar la altura del logo -->
     <main class="flex-grow pt-12 md:pt-16"> 
 
         <!-- VISTA: INICIO (HOME) -->
@@ -108,6 +108,7 @@
                     <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-900/40"></div>
                 </div>
                 <div class="container mx-auto px-6 z-10 relative">
+                    <!-- Texto centrado en móvil, izquierda en escritorio -->
                     <div class="max-w-4xl mx-auto md:mx-0 text-center md:text-left">
                         <div class="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-cyan-500/20 border border-cyan-400 text-cyan-300 rounded-full text-xs md:text-sm font-bold mb-4 md:mb-6 backdrop-blur-sm tracking-wide">
                             OUTSOURCING OPERATIVO ESPECIALIZADO
@@ -131,7 +132,7 @@
                 </div>
             </div>
 
-            <!-- SECCIÓN: Cifras de Impacto -->
+            <!-- SECCIÓN: Cifras de Impacto (TEXTOS RESTAURADOS) -->
             <div class="bg-brand-dark text-white py-12 md:py-16">
                 <div class="container mx-auto px-6">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center divide-x divide-slate-700/50">
@@ -555,7 +556,7 @@
         </div>
     </footer>
 
-    <!-- MODAL DE EMPLEO (Igual que antes) -->
+    <!-- MODAL DE EMPLEO -->
     <div id="job-modal" class="fixed inset-0 z-[60] hidden bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl w-full max-w-lg p-8 relative shadow-2xl animate-[fadeIn_0.3s_ease-out]">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
@@ -579,8 +580,70 @@
         </div>
     </div>
 
-    <!-- Enlace al archivo JS externo -->
-    <script src="script.js"></script>
+    <!-- SCRIPT INTEGRADO PARA EVITAR ERRORES -->
+    <script>
+        // 1. Inicializar Iconos de Lucide
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+
+        // 2. Navegación SPA (Sin recargar)
+        window.navigateTo = function(viewId) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('div[id^="view-"]').forEach(el => {
+                el.classList.add('hidden-section');
+                el.classList.remove('active-section');
+            });
+            
+            // Mostrar la deseada
+            const target = document.getElementById('view-' + viewId);
+            if(target) {
+                target.classList.remove('hidden-section');
+                target.classList.add('active-section');
+                
+                // Scroll al inicio suavemente
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Cerrar menú móvil si está abierto
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        // 3. Menú Móvil
+        window.toggleMobileMenu = function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // 4. Lógica del Modal de Empleos
+        window.openModal = function(jobTitle) {
+            const modalTitle = document.getElementById('modal-job-title');
+            const modal = document.getElementById('job-modal');
+            
+            if(modalTitle && modal) {
+                modalTitle.innerText = jobTitle;
+                modal.classList.remove('hidden');
+            }
+        }
+
+        window.closeModal = function() {
+            const modal = document.getElementById('job-modal');
+            if(modal) {
+                modal.classList.add('hidden');
+            }
+        }
+
+        // Cerrar modal si se hace clic fuera del contenido
+        window.onclick = function(event) {
+            const modal = document.getElementById('job-modal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
 
 </body>
 </html>
