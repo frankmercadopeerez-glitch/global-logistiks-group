@@ -53,11 +53,13 @@
 <body class="bg-white text-slate-800 antialiased flex flex-col min-h-screen overflow-x-hidden">
 
     <!-- NAVBAR -->
-    <nav id="main-nav" class="fixed w-full z-50 bg-white transition-all duration-300 shadow-sm">
-        <div class="container mx-auto px-6 flex justify-between items-center h-full py-3">
+    <!-- Barra de navegación sólida y sin sombras extrañas -->
+    <nav id="main-nav" class="fixed w-full z-50 bg-white transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center h-full">
             
             <!-- Logo -->
-            <div class="cursor-pointer flex items-center h-full" onclick="navigateTo('home')">
+            <!-- La altura del logo define la altura de la barra: h-12 (48px) en móvil, h-16 (64px) en escritorio -->
+            <div class="cursor-pointer flex items-center h-full py-1" onclick="navigateTo('home')">
                 <img src="images/logoglg.jpg" alt="GLG Logo" class="h-12 md:h-16 w-auto object-contain block">
             </div>
 
@@ -68,8 +70,8 @@
                 <button onclick="navigateTo('about')" class="text-sm font-bold uppercase tracking-wider text-slate-800 hover:text-brand-orange transition-colors h-full flex items-center">Nosotros</button>
                 <button onclick="navigateTo('jobs')" class="text-sm font-bold uppercase tracking-wider text-slate-800 hover:text-brand-orange transition-colors h-full flex items-center">Vacantes</button>
                 
-                <!-- Botón Principal -->
-                <button onclick="navigateTo('contact')" class="bg-brand-orange hover:bg-orange-600 text-white shadow-lg shadow-orange-500/20 px-6 py-2 rounded-lg font-bold transition-all transform hover:-translate-y-1 text-sm flex items-center gap-2 ml-2 uppercase tracking-wider">
+                <!-- Botón Principal: SIN ICONO Y MAYÚSCULAS -->
+                <button onclick="navigateTo('contact')" class="bg-brand-orange hover:bg-orange-600 text-white shadow-lg shadow-orange-500/20 px-6 py-2 rounded-lg font-bold transition-all transform hover:-translate-y-1 text-sm flex items-center ml-2 uppercase tracking-wider">
                     CONTÁCTENOS
                 </button>
             </div>
@@ -93,7 +95,8 @@
     </nav>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <main class="flex-grow pt-[65px]"> 
+    <!-- Padding top ajustado para coincidir con la altura del logo + padding vertical -->
+    <main class="flex-grow pt-[56px] md:pt-[72px]"> 
 
         <!-- VISTA: INICIO (HOME) -->
         <div id="view-home" class="active-section">
@@ -105,6 +108,7 @@
                     <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-900/40"></div>
                 </div>
                 <div class="container mx-auto px-6 z-10 relative">
+                    <!-- Texto centrado en móvil -->
                     <div class="max-w-4xl mx-auto md:mx-0 text-center md:text-left">
                         <div class="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-cyan-500/20 border border-cyan-400 text-cyan-300 rounded-full text-xs md:text-sm font-bold mb-4 md:mb-6 backdrop-blur-sm tracking-wide">
                             OUTSOURCING OPERATIVO ESPECIALIZADO
@@ -197,7 +201,8 @@
                 <div class="container mx-auto px-6">
                     <div class="flex flex-col lg:flex-row items-center gap-12 md:gap-16">
                         <div class="w-full lg:w-1/2">
-                                                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Equipo de trabajo seguro" class="rounded-3xl shadow-2xl w-full h-auto object-cover">
+                            
+                            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Equipo de trabajo seguro" class="rounded-3xl shadow-2xl w-full h-auto object-cover">
                         </div>
                         <div class="w-full lg:w-1/2">
                             <span class="text-brand-cyan font-bold uppercase tracking-wider text-sm block mb-2 text-center lg:text-left">Gestión de Talento</span>
@@ -367,7 +372,8 @@
                     <!-- Vacante 1: Operador Montacargas -->
                     <div class="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition-shadow overflow-hidden">
                         <div class="h-40 overflow-hidden">
-                                                        <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Montacargas">
+                            
+                            <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Montacargas">
                         </div>
                         <div class="p-6">
                             <div class="flex justify-between items-start mb-2">
@@ -386,7 +392,8 @@
                     <!-- Vacante 2: Coordinador HSE -->
                     <div class="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition-shadow overflow-hidden">
                         <div class="h-40 overflow-hidden">
-                                                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="HSE">
+                            
+                            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="HSE">
                         </div>
                         <div class="p-6">
                             <div class="flex justify-between items-start mb-2">
@@ -405,7 +412,8 @@
                     <!-- Vacante 3: Conductor C3 -->
                     <div class="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition-shadow overflow-hidden">
                         <div class="h-40 overflow-hidden">
-                                                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Conductor">
+                            
+                            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Conductor">
                         </div>
                         <div class="p-6">
                             <div class="flex justify-between items-start mb-2">
@@ -424,7 +432,8 @@
                     <!-- Vacante 4: Auxiliar de Bodega -->
                     <div class="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition-shadow overflow-hidden">
                         <div class="h-40 overflow-hidden">
-                                                        <img src="https://images.unsplash.com/photo-1586528116493-a029325540fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Bodega">
+                            
+                            <img src="https://images.unsplash.com/photo-1586528116493-a029325540fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Bodega">
                         </div>
                         <div class="p-6">
                             <div class="flex justify-between items-start mb-2">
@@ -449,7 +458,8 @@
             <div class="container mx-auto px-6 mb-24">
                 <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                     <div class="w-full lg:w-1/2">
-                                                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Nosotros" class="rounded-2xl shadow-2xl">
+                        [Image of Professional team working]
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Nosotros" class="rounded-2xl shadow-2xl">
                     </div>
                     <div class="w-full lg:w-1/2">
                         <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">Compromiso y Evolución</h2>
