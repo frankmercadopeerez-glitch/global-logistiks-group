@@ -53,12 +53,10 @@
 <body class="bg-white text-slate-800 antialiased flex flex-col min-h-screen overflow-x-hidden">
 
     <!-- NAVBAR -->
-    <!-- Fondo blanco sólido, sin sombras ni bordes extraños -->
     <nav id="main-nav" class="fixed w-full z-50 bg-white transition-all duration-300">
         <div class="container mx-auto px-6 flex justify-between items-center h-full">
             
             <!-- Logo -->
-            <!-- Altura ajustada para definir el alto de la barra -->
             <div class="cursor-pointer flex items-center h-full" onclick="navigateTo('home')">
                 <img src="images/logoglg.jpg" alt="GLG Logo" class="h-12 md:h-16 w-auto object-contain block">
             </div>
@@ -71,8 +69,8 @@
                 <button onclick="navigateTo('jobs')" class="text-sm font-bold uppercase tracking-wider text-slate-800 hover:text-brand-orange transition-colors h-full flex items-center">Vacantes</button>
                 
                 <!-- Botón Principal -->
-                <button onclick="navigateTo('contact')" class="bg-brand-orange hover:bg-orange-600 text-white shadow-lg shadow-orange-500/20 px-6 py-2 rounded-lg font-bold transition-all transform hover:-translate-y-1 text-sm flex items-center gap-2 ml-2">
-                    <i data-lucide="message-circle" class="w-4 h-4"></i> Contáctenos
+                <button onclick="navigateTo('contact')" class="bg-brand-orange hover:bg-orange-600 text-white shadow-lg shadow-orange-500/20 px-6 py-2 rounded-lg font-bold transition-all transform hover:-translate-y-1 text-sm flex items-center gap-2 ml-2 uppercase tracking-wider">
+                    CONTÁCTENOS
                 </button>
             </div>
 
@@ -89,13 +87,12 @@
                 <button onclick="navigateTo('services')" class="text-left text-xl font-bold py-3 border-b border-slate-100 text-slate-800">Servicios</button>
                 <button onclick="navigateTo('jobs')" class="text-left text-xl font-bold py-3 border-b border-slate-100 text-slate-800">Bolsa de Empleo</button>
                 <button onclick="navigateTo('about')" class="text-left text-xl font-bold py-3 border-b border-slate-100 text-slate-800">Nosotros</button>
-                <button onclick="navigateTo('contact')" class="text-left text-xl font-bold py-3 border-b border-slate-100 text-brand-orange">Contáctenos</button>
+                <button onclick="navigateTo('contact')" class="text-left text-xl font-bold py-3 border-b border-slate-100 text-brand-orange uppercase">CONTÁCTENOS</button>
             </div>
         </div>
     </nav>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <!-- Padding top exacto para compensar la altura del logo -->
     <main class="flex-grow pt-12 md:pt-16"> 
 
         <!-- VISTA: INICIO (HOME) -->
@@ -108,7 +105,6 @@
                     <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-900/40"></div>
                 </div>
                 <div class="container mx-auto px-6 z-10 relative">
-                    <!-- Texto centrado en móvil, izquierda en escritorio -->
                     <div class="max-w-4xl mx-auto md:mx-0 text-center md:text-left">
                         <div class="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-cyan-500/20 border border-cyan-400 text-cyan-300 rounded-full text-xs md:text-sm font-bold mb-4 md:mb-6 backdrop-blur-sm tracking-wide">
                             OUTSOURCING OPERATIVO ESPECIALIZADO
@@ -121,8 +117,8 @@
                             Proveemos personal altamente calificado para operaciones portuarias, fluviales y terrestres. Gestión de fuerza laboral con rigor y seguridad.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center md:justify-start">
-                            <button onclick="navigateTo('contact')" class="bg-brand-orange hover:bg-orange-600 text-white px-8 py-3.5 rounded-lg font-bold text-base md:text-lg flex items-center justify-center gap-2 transition-all hover:-translate-y-1 shadow-xl shadow-orange-500/30">
-                                Solicitar Personal <i data-lucide="arrow-right" class="w-5 h-5 md:w-6 md:h-6"></i>
+                            <button onclick="navigateTo('contact')" class="bg-brand-orange hover:bg-orange-600 text-white px-8 py-3.5 rounded-lg font-bold text-base md:text-lg flex items-center justify-center gap-2 transition-all hover:-translate-y-1 shadow-xl shadow-orange-500/30 uppercase tracking-wide">
+                                SOLICITAR PERSONAL <i data-lucide="arrow-right" class="w-5 h-5 md:w-6 md:h-6"></i>
                             </button>
                             <button onclick="navigateTo('services')" class="border-2 border-white text-white hover:bg-white/10 px-8 py-3.5 rounded-lg font-bold text-base md:text-lg transition-all">
                                 Perfiles Disponibles
@@ -132,7 +128,7 @@
                 </div>
             </div>
 
-            <!-- SECCIÓN: Cifras de Impacto (TEXTOS RESTAURADOS) -->
+            <!-- SECCIÓN: Cifras de Impacto -->
             <div class="bg-brand-dark text-white py-12 md:py-16">
                 <div class="container mx-auto px-6">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center divide-x divide-slate-700/50">
@@ -167,25 +163,40 @@
                     
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <!-- Servicio 1 -->
-                        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-brand-orange hover:-translate-y-2 transition-transform group text-center md:text-left">
-                            <div class="mb-6 text-5xl md:text-6xl bg-orange-50 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full group-hover:bg-brand-orange/20 transition-colors mx-auto md:mx-0">🏗️</div>
-                            <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Operarios Portuarios</h3>
-                            <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Cuadrillas para estiba, desestiba y trincaje. Personal con cursos de alturas y manejo de cargas.</p>
-                            <button onclick="navigateTo('services')" class="text-brand-orange font-bold hover:underline flex items-center gap-2 text-sm mx-auto md:mx-0">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                        <div class="bg-white rounded-3xl shadow-xl border-t-8 border-brand-orange hover:-translate-y-2 transition-transform group text-center md:text-left overflow-hidden">
+                            <!-- Imagen -->
+                            <div class="h-48 overflow-hidden">
+                                                                <img src="https://images.unsplash.com/photo-1532635241-17e820acc59f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Operarios Portuarios" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Operarios Portuarios</h3>
+                                <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Cuadrillas para estiba, desestiba y trincaje. Personal con cursos de alturas y manejo de cargas.</p>
+                                <button onclick="navigateTo('services')" class="text-brand-orange font-bold hover:underline flex items-center gap-2 text-sm mx-auto md:mx-0">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                            </div>
                         </div>
                         <!-- Servicio 2 -->
-                        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-brand-cyan hover:-translate-y-2 transition-transform group text-center md:text-left">
-                            <div class="mb-6 text-5xl md:text-6xl bg-cyan-50 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full group-hover:bg-brand-cyan/20 transition-colors mx-auto md:mx-0">🚤</div>
-                            <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Personal Fluvial</h3>
-                            <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Suministro de <strong>pilotos de lancha</strong> y motoristas. Experiencia en maniobras complejas en río.</p>
-                            <button onclick="navigateTo('services')" class="text-brand-cyan font-bold hover:underline flex items-center gap-2 text-sm mx-auto md:mx-0">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                        <div class="bg-white rounded-3xl shadow-xl border-t-8 border-brand-cyan hover:-translate-y-2 transition-transform group text-center md:text-left overflow-hidden">
+                            <!-- Imagen -->
+                            <div class="h-48 overflow-hidden">
+                                                                <img src="https://images.unsplash.com/photo-1544642899-f0d6e5f6ed6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Personal Fluvial" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Personal Fluvial</h3>
+                                <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Suministro de <strong>pilotos de lancha</strong> y motoristas. Experiencia en maniobras complejas en río.</p>
+                                <button onclick="navigateTo('services')" class="text-brand-cyan font-bold hover:underline flex items-center gap-2 text-sm mx-auto md:mx-0">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                            </div>
                         </div>
                         <!-- Servicio 3 -->
-                        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-brand-orange hover:-translate-y-2 transition-transform group text-center md:text-left">
-                            <div class="mb-6 text-5xl md:text-6xl bg-orange-50 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full group-hover:bg-brand-orange/20 transition-colors mx-auto md:mx-0">📋</div>
-                            <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Loading Masters</h3>
-                            <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Expertos técnicos para supervisión de interfaz buque-tierra. Personal bilingüe con dominio ISGOTT.</p>
-                            <button onclick="navigateTo('services')" class="text-brand-orange font-bold hover:underline flex items-center gap-2 text-sm mx-auto md:mx-0">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                        <div class="bg-white rounded-3xl shadow-xl border-t-8 border-brand-orange hover:-translate-y-2 transition-transform group text-center md:text-left overflow-hidden">
+                            <!-- Imagen -->
+                            <div class="h-48 overflow-hidden">
+                                                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Loading Masters" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Loading Masters</h3>
+                                <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Expertos técnicos para supervisión de interfaz buque-tierra. Personal bilingüe con dominio ISGOTT.</p>
+                                <button onclick="navigateTo('services')" class="text-brand-orange font-bold hover:underline flex items-center gap-2 text-sm mx-auto md:mx-0">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                            </div>
                         </div>
                     </div>
                     <div class="text-center mt-12">
@@ -201,7 +212,7 @@
                 <div class="container mx-auto px-6">
                     <div class="flex flex-col lg:flex-row items-center gap-12 md:gap-16">
                         <div class="w-full lg:w-1/2">
-                            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Equipo de trabajo seguro" class="rounded-3xl shadow-2xl w-full h-auto object-cover">
+                                                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Equipo de trabajo seguro" class="rounded-3xl shadow-2xl w-full h-auto object-cover">
                         </div>
                         <div class="w-full lg:w-1/2">
                             <span class="text-brand-cyan font-bold uppercase tracking-wider text-sm block mb-2 text-center lg:text-left">Gestión de Talento</span>
@@ -304,10 +315,12 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-                     <!-- Tarjetas de servicio -->
-                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
-                        <div class="md:w-1/3 bg-slate-100 flex items-center justify-center text-6xl md:text-8xl p-6 md:p-8">🏗️</div>
-                        <div class="p-6 md:p-8 md:w-2/3">
+                     <!-- Tarjetas de servicio con imagen -->
+                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row hover:shadow-2xl transition-shadow">
+                        <div class="md:w-2/5 h-48 md:h-auto">
+                                                        <img src="https://images.unsplash.com/photo-1621955964441-c173e01c135b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Personal de Carga">
+                        </div>
+                        <div class="p-6 md:p-8 md:w-3/5">
                             <h3 class="text-xl md:text-2xl font-bold mb-2 text-brand-dark">Personal de Carga</h3>
                             <p class="text-slate-600 mb-4 text-sm">Cuadrillas especializadas para el manejo de carga general y granel. Personal físico robusto y técnicamente preparado.</p>
                             <ul class="text-sm text-slate-500 space-y-1">
@@ -317,9 +330,12 @@
                             </ul>
                         </div>
                      </div>
-                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
-                        <div class="md:w-1/3 bg-slate-100 flex items-center justify-center text-6xl md:text-8xl p-6 md:p-8">🚛</div>
-                        <div class="p-6 md:p-8 md:w-2/3">
+                     <!-- Tarjeta 2 -->
+                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row hover:shadow-2xl transition-shadow">
+                        <div class="md:w-2/5 h-48 md:h-auto">
+                                                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Conductor">
+                        </div>
+                        <div class="p-6 md:p-8 md:w-3/5">
                             <h3 class="text-xl md:text-2xl font-bold mb-2 text-brand-dark">Suministro de Conductores</h3>
                             <p class="text-slate-600 mb-4 text-sm">Conductores profesionales con licencia C3 vigente y experiencia en rutas nacionales.</p>
                             <ul class="text-sm text-slate-500 space-y-1">
@@ -329,9 +345,12 @@
                             </ul>
                         </div>
                      </div>
-                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
-                        <div class="md:w-1/3 bg-slate-100 flex items-center justify-center text-6xl md:text-8xl p-6 md:p-8">📋</div>
-                        <div class="p-6 md:p-8 md:w-2/3">
+                     <!-- Tarjeta 3 -->
+                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row hover:shadow-2xl transition-shadow">
+                        <div class="md:w-2/5 h-48 md:h-auto">
+                                                        <img src="https://images.unsplash.com/photo-1586528116493-a029325540fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Bodega">
+                        </div>
+                        <div class="p-6 md:p-8 md:w-3/5">
                             <h3 class="text-xl md:text-2xl font-bold mb-2 text-brand-dark">Auxiliares de Bodega</h3>
                             <p class="text-slate-600 mb-4 text-sm">Personal ágil para gestión de inventarios, piking y packing en sus instalaciones.</p>
                             <ul class="text-sm text-slate-500 space-y-1">
@@ -341,9 +360,12 @@
                             </ul>
                         </div>
                      </div>
-                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
-                        <div class="md:w-1/3 bg-slate-100 flex items-center justify-center text-6xl md:text-8xl p-6 md:p-8">🚤</div>
-                        <div class="p-6 md:p-8 md:w-2/3">
+                     <!-- Tarjeta 4 -->
+                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row hover:shadow-2xl transition-shadow">
+                        <div class="md:w-2/5 h-48 md:h-auto">
+                                                        <img src="https://images.unsplash.com/photo-1544642899-f0d6e5f6ed6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Fluvial">
+                        </div>
+                        <div class="p-6 md:p-8 md:w-3/5">
                             <h3 class="text-xl md:text-2xl font-bold mb-2 text-brand-dark">Pilotos y Personal Fluvial</h3>
                             <p class="text-slate-600 mb-4 text-sm">Personal experto para operaciones en río. Ideal para empresas como Impala.</p>
                             <ul class="text-sm text-slate-500 space-y-1">
@@ -358,7 +380,7 @@
             </div>
         </div>
 
-        <!-- VISTA: BOLSA DE EMPLEO (JOBS) -->
+        <!-- VISTA: BOLSA DE EMPLEO (JOBS) - Con Imágenes -->
         <div id="view-jobs" class="hidden-section bg-slate-50 min-h-screen pb-20">
             <div class="container mx-auto px-6 pt-10">
                 <div class="text-center mb-10">
@@ -366,37 +388,103 @@
                     <p class="text-slate-600">Únete a la familia Global Logistiks Group.</p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-lg md:text-xl font-bold text-slate-800">Piloto de Lancha</h3>
-                                <p class="text-brand-orange font-semibold text-sm">Barranquilla / Zona Fluvial</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    
+                    <!-- Vacante 1 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition-shadow overflow-hidden">
+                        <div class="h-40 overflow-hidden">
+                                                        <img src="https://images.unsplash.com/photo-1544642899-f0d6e5f6ed6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Lancha">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-bold text-slate-800">Piloto de Lancha</h3>
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded font-bold">Urgente</span>
                             </div>
-                            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded font-bold">Urgente</span>
-                        </div>
-                        <p class="text-slate-600 text-sm mb-4">Se requiere piloto con licencia vigente y experiencia mínima de 2 años.</p>
-                        <div class="flex items-center gap-4 text-sm text-slate-500 mb-6">
-                            <span class="flex items-center gap-1"><i data-lucide="dollar-sign" class="w-4 h-4"></i> A convenir</span>
-                            <span class="flex items-center gap-1"><i data-lucide="clock" class="w-4 h-4"></i> Turnos</span>
-                        </div>
-                        <button onclick="openModal('Piloto de Lancha')" class="w-full border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white py-2 rounded-lg font-bold transition-colors">Aplicar a Vacante</button>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-lg md:text-xl font-bold text-slate-800">Operador de Montacargas</h3>
-                                <p class="text-brand-orange font-semibold text-sm">Barranquilla</p>
+                            <p class="text-brand-orange text-xs font-bold mb-3">Barranquilla / Zona Fluvial</p>
+                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
+                                <span class="flex items-center gap-1"><i data-lucide="dollar-sign" class="w-3 h-3"></i> A convenir</span>
+                                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> Turnos</span>
                             </div>
-                            <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded font-bold">Nuevo</span>
+                            <button onclick="openModal('Piloto de Lancha')" class="w-full border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white py-2 rounded-lg font-bold transition-colors">Aplicar</button>
                         </div>
-                        <p class="text-slate-600 text-sm mb-4">Certificado vigente indispensable.</p>
-                        <div class="flex items-center gap-4 text-sm text-slate-500 mb-6">
-                            <span class="flex items-center gap-1"><i data-lucide="dollar-sign" class="w-4 h-4"></i> $ 1.8M + Extras</span>
-                            <span class="flex items-center gap-1"><i data-lucide="clock" class="w-4 h-4"></i> Turnos</span>
-                        </div>
-                        <button onclick="openModal('Operador Montacargas')" class="w-full border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white py-2 rounded-lg font-bold transition-colors">Aplicar a Vacante</button>
                     </div>
+
+                    <!-- Vacante 2 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition-shadow overflow-hidden">
+                        <div class="h-40 overflow-hidden">
+                                                        <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Montacargas">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-bold text-slate-800">Operador Montacargas</h3>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded font-bold">Nuevo</span>
+                            </div>
+                            <p class="text-brand-orange text-xs font-bold mb-3">Barranquilla</p>
+                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
+                                <span class="flex items-center gap-1"><i data-lucide="dollar-sign" class="w-3 h-3"></i> $ 1.8M + Extras</span>
+                                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> Turnos</span>
+                            </div>
+                            <button onclick="openModal('Operador Montacargas')" class="w-full border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white py-2 rounded-lg font-bold transition-colors">Aplicar</button>
+                        </div>
+                    </div>
+
+                    <!-- Vacante 3 (NUEVA) -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition-shadow overflow-hidden">
+                        <div class="h-40 overflow-hidden">
+                                                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="HSE">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-bold text-slate-800">Coordinador HSE</h3>
+                                <span class="bg-slate-100 text-slate-600 text-xs px-2 py-1 rounded font-bold">Activa</span>
+                            </div>
+                            <p class="text-brand-orange text-xs font-bold mb-3">Cartagena</p>
+                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
+                                <span class="flex items-center gap-1"><i data-lucide="dollar-sign" class="w-3 h-3"></i> $ 3.5M - $ 4.0M</span>
+                                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> Tiempo Completo</span>
+                            </div>
+                            <button onclick="openModal('Coordinador HSE')" class="w-full border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white py-2 rounded-lg font-bold transition-colors">Aplicar</button>
+                        </div>
+                    </div>
+
+                    <!-- Vacante 4 (NUEVA) -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition-shadow overflow-hidden">
+                        <div class="h-40 overflow-hidden">
+                                                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Conductor">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-bold text-slate-800">Conductor C3</h3>
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded font-bold">Urgente</span>
+                            </div>
+                            <p class="text-brand-orange text-xs font-bold mb-3">Ruta Nacional</p>
+                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
+                                <span class="flex items-center gap-1"><i data-lucide="dollar-sign" class="w-3 h-3"></i> $ 2.5M - $ 3.5M</span>
+                                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> Por Viaje</span>
+                            </div>
+                            <button onclick="openModal('Conductor C3')" class="w-full border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white py-2 rounded-lg font-bold transition-colors">Aplicar</button>
+                        </div>
+                    </div>
+
+                    <!-- Vacante 5 (NUEVA) -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition-shadow overflow-hidden">
+                        <div class="h-40 overflow-hidden">
+                                                        <img src="https://images.unsplash.com/photo-1586528116493-a029325540fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Bodega">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-bold text-slate-800">Auxiliar de Bodega</h3>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded font-bold">Nuevo</span>
+                            </div>
+                            <p class="text-brand-orange text-xs font-bold mb-3">Cartagena</p>
+                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
+                                <span class="flex items-center gap-1"><i data-lucide="dollar-sign" class="w-3 h-3"></i> SMLV + Prestaciones</span>
+                                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> Turnos</span>
+                            </div>
+                            <button onclick="openModal('Auxiliar Bodega')" class="w-full border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white py-2 rounded-lg font-bold transition-colors">Aplicar</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -406,7 +494,7 @@
             <div class="container mx-auto px-6 mb-24">
                 <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                     <div class="w-full lg:w-1/2">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Nosotros" class="rounded-2xl shadow-2xl">
+                                                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Nosotros" class="rounded-2xl shadow-2xl">
                     </div>
                     <div class="w-full lg:w-1/2">
                         <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">Compromiso y Evolución</h2>
@@ -490,11 +578,10 @@
             <div class="container mx-auto px-6 max-w-4xl">
                 <h1 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Política de Tratamiento de Datos</h1>
                 <div class="prose max-w-none text-slate-600 bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                    <p class="mb-4"><strong>GLOBAL LOGISTIKS GROUP S.A.S.</strong>, en cumplimiento de la Ley 1581 de 2012, informa que sus datos serán tratados confidencialmente.</p>
+                    <p class="mb-4"><strong>GLOBAL LOGISTIKS GROUP S.A.S.</strong>, en cumplimiento de la Ley 1581 de 2012...</p>
                     <ul class="list-disc pl-5 space-y-2">
                         <li>Uso para procesos de selección y contratación.</li>
                         <li>Gestión administrativa y facturación.</li>
-                        <li>Envío de comunicaciones corporativas.</li>
                     </ul>
                     <p class="mt-4">Para ejercer sus derechos, contacte a: <a href="mailto:info@globallogistiksgroup.com" class="text-brand-orange hover:underline">info@globallogistiksgroup.com</a></p>
                 </div>
@@ -580,70 +667,8 @@
         </div>
     </div>
 
-    <!-- SCRIPT INTEGRADO PARA EVITAR ERRORES -->
-    <script>
-        // 1. Inicializar Iconos de Lucide
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-        });
-
-        // 2. Navegación SPA (Sin recargar)
-        window.navigateTo = function(viewId) {
-            // Ocultar todas las secciones
-            document.querySelectorAll('div[id^="view-"]').forEach(el => {
-                el.classList.add('hidden-section');
-                el.classList.remove('active-section');
-            });
-            
-            // Mostrar la deseada
-            const target = document.getElementById('view-' + viewId);
-            if(target) {
-                target.classList.remove('hidden-section');
-                target.classList.add('active-section');
-                
-                // Scroll al inicio suavemente
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
-            
-            // Cerrar menú móvil si está abierto
-            document.getElementById('mobile-menu').classList.add('hidden');
-        }
-
-        // 3. Menú Móvil
-        window.toggleMobileMenu = function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        // 4. Lógica del Modal de Empleos
-        window.openModal = function(jobTitle) {
-            const modalTitle = document.getElementById('modal-job-title');
-            const modal = document.getElementById('job-modal');
-            
-            if(modalTitle && modal) {
-                modalTitle.innerText = jobTitle;
-                modal.classList.remove('hidden');
-            }
-        }
-
-        window.closeModal = function() {
-            const modal = document.getElementById('job-modal');
-            if(modal) {
-                modal.classList.add('hidden');
-            }
-        }
-
-        // Cerrar modal si se hace clic fuera del contenido
-        window.onclick = function(event) {
-            const modal = document.getElementById('job-modal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-    </script>
+    <!-- Enlace al archivo JS externo -->
+    <script src="script.js"></script>
 
 </body>
 </html>
