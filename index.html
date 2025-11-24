@@ -53,8 +53,8 @@
 <body class="bg-white text-slate-800 antialiased flex flex-col min-h-screen overflow-x-hidden">
 
     <!-- NAVBAR -->
-    <nav id="main-nav" class="fixed w-full z-50 bg-white transition-all duration-300">
-        <div class="container mx-auto px-6 flex justify-between items-center h-full">
+    <nav id="main-nav" class="fixed w-full z-50 bg-white transition-all duration-300 shadow-sm">
+        <div class="container mx-auto px-6 flex justify-between items-center h-full py-3">
             
             <!-- Logo -->
             <div class="cursor-pointer flex items-center h-full" onclick="navigateTo('home')">
@@ -93,7 +93,7 @@
     </nav>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <main class="flex-grow pt-12 md:pt-16"> 
+    <main class="flex-grow pt-[65px]"> 
 
         <!-- VISTA: INICIO (HOME) -->
         <div id="view-home" class="active-section">
@@ -152,7 +152,7 @@
                 </div>
             </div>
 
-            <!-- Services Preview -->
+            <!-- Services Preview (EMOJIS RESTAURADOS) -->
             <section class="py-16 md:py-24 bg-slate-50">
                 <div class="container mx-auto px-6">
                     <div class="mb-12 text-center max-w-3xl mx-auto">
@@ -162,41 +162,26 @@
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Servicio 1 -->
-                        <div class="bg-white rounded-3xl shadow-xl border-t-8 border-brand-orange hover:-translate-y-2 transition-transform group text-center md:text-left overflow-hidden">
-                            <!-- Imagen -->
-                            <div class="h-48 overflow-hidden">
-                                                                <img src="https://images.unsplash.com/photo-1532635241-17e820acc59f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Operarios Portuarios" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            </div>
-                            <div class="p-8">
-                                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Operarios Portuarios</h3>
-                                <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Cuadrillas para estiba, desestiba y trincaje. Personal con cursos de alturas y manejo de cargas.</p>
-                                <button onclick="navigateTo('services')" class="text-brand-orange font-bold hover:underline flex items-center gap-2 text-sm mx-auto md:mx-0">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
-                            </div>
+                        <!-- Servicio 1: Operarios (EMOJI) -->
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-brand-orange hover:-translate-y-2 transition-transform group text-center md:text-left">
+                            <div class="mb-6 text-5xl md:text-6xl bg-orange-50 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full group-hover:bg-brand-orange/20 transition-colors mx-auto md:mx-0">🏗️</div>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Operarios Portuarios</h3>
+                            <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Cuadrillas para estiba, desestiba y trincaje. Personal con cursos de alturas y manejo de cargas.</p>
+                            <button onclick="navigateTo('services')" class="text-brand-orange font-bold hover:underline flex items-center gap-2 text-sm mx-auto md:mx-0">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
                         </div>
-                        <!-- Servicio 2 -->
-                        <div class="bg-white rounded-3xl shadow-xl border-t-8 border-brand-cyan hover:-translate-y-2 transition-transform group text-center md:text-left overflow-hidden">
-                            <!-- Imagen -->
-                            <div class="h-48 overflow-hidden">
-                                                                <img src="https://images.unsplash.com/photo-1544642899-f0d6e5f6ed6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Personal Fluvial" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            </div>
-                            <div class="p-8">
-                                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Personal Fluvial</h3>
-                                <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Suministro de <strong>pilotos de lancha</strong> y motoristas. Experiencia en maniobras complejas en río.</p>
-                                <button onclick="navigateTo('services')" class="text-brand-cyan font-bold hover:underline flex items-center gap-2 text-sm mx-auto md:mx-0">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
-                            </div>
+                        <!-- Servicio 2: Fluvial (EMOJI) -->
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-brand-cyan hover:-translate-y-2 transition-transform group text-center md:text-left">
+                            <div class="mb-6 text-5xl md:text-6xl bg-cyan-50 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full group-hover:bg-brand-cyan/20 transition-colors mx-auto md:mx-0">🚤</div>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Personal Fluvial</h3>
+                            <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Suministro de <strong>pilotos de lancha</strong> y motoristas. Experiencia en maniobras complejas en río.</p>
+                            <button onclick="navigateTo('services')" class="text-brand-cyan font-bold hover:underline flex items-center gap-2 text-sm mx-auto md:mx-0">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
                         </div>
-                        <!-- Servicio 3 -->
-                        <div class="bg-white rounded-3xl shadow-xl border-t-8 border-brand-orange hover:-translate-y-2 transition-transform group text-center md:text-left overflow-hidden">
-                            <!-- Imagen -->
-                            <div class="h-48 overflow-hidden">
-                                                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Loading Masters" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            </div>
-                            <div class="p-8">
-                                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Loading Masters</h3>
-                                <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Expertos técnicos para supervisión de interfaz buque-tierra. Personal bilingüe con dominio ISGOTT.</p>
-                                <button onclick="navigateTo('services')" class="text-brand-orange font-bold hover:underline flex items-center gap-2 text-sm mx-auto md:mx-0">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
-                            </div>
+                        <!-- Servicio 3: Loading Master (EMOJI) -->
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-brand-orange hover:-translate-y-2 transition-transform group text-center md:text-left">
+                            <div class="mb-6 text-5xl md:text-6xl bg-orange-50 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full group-hover:bg-brand-orange/20 transition-colors mx-auto md:mx-0">📋</div>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Loading Masters</h3>
+                            <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Expertos técnicos para supervisión de interfaz buque-tierra. Personal bilingüe con dominio ISGOTT.</p>
+                            <button onclick="navigateTo('services')" class="text-brand-orange font-bold hover:underline flex items-center gap-2 text-sm mx-auto md:mx-0">Ver Perfiles <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
                         </div>
                     </div>
                     <div class="text-center mt-12">
@@ -315,12 +300,10 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-                     <!-- Tarjetas de servicio con imagen -->
-                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row hover:shadow-2xl transition-shadow">
-                        <div class="md:w-2/5 h-48 md:h-auto">
-                                                        <img src="https://images.unsplash.com/photo-1621955964441-c173e01c135b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Personal de Carga">
-                        </div>
-                        <div class="p-6 md:p-8 md:w-3/5">
+                     <!-- Tarjetas de servicio (EMOJIS) -->
+                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                        <div class="md:w-1/3 bg-slate-100 flex items-center justify-center text-6xl md:text-8xl p-6 md:p-8">🏗️</div>
+                        <div class="p-6 md:p-8 md:w-2/3">
                             <h3 class="text-xl md:text-2xl font-bold mb-2 text-brand-dark">Personal de Carga</h3>
                             <p class="text-slate-600 mb-4 text-sm">Cuadrillas especializadas para el manejo de carga general y granel. Personal físico robusto y técnicamente preparado.</p>
                             <ul class="text-sm text-slate-500 space-y-1">
@@ -330,12 +313,9 @@
                             </ul>
                         </div>
                      </div>
-                     <!-- Tarjeta 2 -->
-                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row hover:shadow-2xl transition-shadow">
-                        <div class="md:w-2/5 h-48 md:h-auto">
-                                                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Conductor">
-                        </div>
-                        <div class="p-6 md:p-8 md:w-3/5">
+                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                        <div class="md:w-1/3 bg-slate-100 flex items-center justify-center text-6xl md:text-8xl p-6 md:p-8">🚛</div>
+                        <div class="p-6 md:p-8 md:w-2/3">
                             <h3 class="text-xl md:text-2xl font-bold mb-2 text-brand-dark">Suministro de Conductores</h3>
                             <p class="text-slate-600 mb-4 text-sm">Conductores profesionales con licencia C3 vigente y experiencia en rutas nacionales.</p>
                             <ul class="text-sm text-slate-500 space-y-1">
@@ -345,12 +325,9 @@
                             </ul>
                         </div>
                      </div>
-                     <!-- Tarjeta 3 -->
-                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row hover:shadow-2xl transition-shadow">
-                        <div class="md:w-2/5 h-48 md:h-auto">
-                                                        <img src="https://images.unsplash.com/photo-1586528116493-a029325540fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Bodega">
-                        </div>
-                        <div class="p-6 md:p-8 md:w-3/5">
+                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                        <div class="md:w-1/3 bg-slate-100 flex items-center justify-center text-6xl md:text-8xl p-6 md:p-8">📋</div>
+                        <div class="p-6 md:p-8 md:w-2/3">
                             <h3 class="text-xl md:text-2xl font-bold mb-2 text-brand-dark">Auxiliares de Bodega</h3>
                             <p class="text-slate-600 mb-4 text-sm">Personal ágil para gestión de inventarios, piking y packing en sus instalaciones.</p>
                             <ul class="text-sm text-slate-500 space-y-1">
@@ -360,12 +337,9 @@
                             </ul>
                         </div>
                      </div>
-                     <!-- Tarjeta 4 -->
-                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row hover:shadow-2xl transition-shadow">
-                        <div class="md:w-2/5 h-48 md:h-auto">
-                                                        <img src="https://images.unsplash.com/photo-1544642899-f0d6e5f6ed6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Fluvial">
-                        </div>
-                        <div class="p-6 md:p-8 md:w-3/5">
+                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                        <div class="md:w-1/3 bg-slate-100 flex items-center justify-center text-6xl md:text-8xl p-6 md:p-8">🚤</div>
+                        <div class="p-6 md:p-8 md:w-2/3">
                             <h3 class="text-xl md:text-2xl font-bold mb-2 text-brand-dark">Pilotos y Personal Fluvial</h3>
                             <p class="text-slate-600 mb-4 text-sm">Personal experto para operaciones en río. Ideal para empresas como Impala.</p>
                             <ul class="text-sm text-slate-500 space-y-1">
@@ -389,27 +363,8 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                    
-                    <!-- Vacante 1 -->
-                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition-shadow overflow-hidden">
-                        <div class="h-40 overflow-hidden">
-                                                        <img src="https://images.unsplash.com/photo-1544642899-f0d6e5f6ed6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Lancha">
-                        </div>
-                        <div class="p-6">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-lg font-bold text-slate-800">Piloto de Lancha</h3>
-                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded font-bold">Urgente</span>
-                            </div>
-                            <p class="text-brand-orange text-xs font-bold mb-3">Barranquilla / Zona Fluvial</p>
-                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
-                                <span class="flex items-center gap-1"><i data-lucide="dollar-sign" class="w-3 h-3"></i> A convenir</span>
-                                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> Turnos</span>
-                            </div>
-                            <button onclick="openModal('Piloto de Lancha')" class="w-full border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white py-2 rounded-lg font-bold transition-colors">Aplicar</button>
-                        </div>
-                    </div>
 
-                    <!-- Vacante 2 -->
+                    <!-- Vacante 1: Operador Montacargas -->
                     <div class="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition-shadow overflow-hidden">
                         <div class="h-40 overflow-hidden">
                                                         <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Montacargas">
@@ -428,7 +383,7 @@
                         </div>
                     </div>
 
-                    <!-- Vacante 3 (NUEVA) -->
+                    <!-- Vacante 2: Coordinador HSE -->
                     <div class="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition-shadow overflow-hidden">
                         <div class="h-40 overflow-hidden">
                                                         <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="HSE">
@@ -447,7 +402,7 @@
                         </div>
                     </div>
 
-                    <!-- Vacante 4 (NUEVA) -->
+                    <!-- Vacante 3: Conductor C3 -->
                     <div class="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition-shadow overflow-hidden">
                         <div class="h-40 overflow-hidden">
                                                         <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Conductor">
@@ -466,7 +421,7 @@
                         </div>
                     </div>
 
-                    <!-- Vacante 5 (NUEVA) -->
+                    <!-- Vacante 4: Auxiliar de Bodega -->
                     <div class="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition-shadow overflow-hidden">
                         <div class="h-40 overflow-hidden">
                                                         <img src="https://images.unsplash.com/photo-1586528116493-a029325540fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="Bodega">
@@ -578,10 +533,11 @@
             <div class="container mx-auto px-6 max-w-4xl">
                 <h1 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Política de Tratamiento de Datos</h1>
                 <div class="prose max-w-none text-slate-600 bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                    <p class="mb-4"><strong>GLOBAL LOGISTIKS GROUP S.A.S.</strong>, en cumplimiento de la Ley 1581 de 2012...</p>
+                    <p class="mb-4"><strong>GLOBAL LOGISTIKS GROUP S.A.S.</strong>, en cumplimiento de la Ley 1581 de 2012, informa que sus datos serán tratados confidencialmente.</p>
                     <ul class="list-disc pl-5 space-y-2">
                         <li>Uso para procesos de selección y contratación.</li>
                         <li>Gestión administrativa y facturación.</li>
+                        <li>Envío de comunicaciones corporativas.</li>
                     </ul>
                     <p class="mt-4">Para ejercer sus derechos, contacte a: <a href="mailto:info@globallogistiksgroup.com" class="text-brand-orange hover:underline">info@globallogistiksgroup.com</a></p>
                 </div>
